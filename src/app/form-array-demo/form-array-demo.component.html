@@ -1,0 +1,14 @@
+<h2>FormArray Demo</h2>
+<form [formGroup]="form">
+  <!-- Bind the FormArray to formArrayName -->
+  <div formArrayName="phoneNumbers">
+    <h3>Phone Numbers:</h3>
+    <!-- Iterate over controls in the FormArray -->
+    <div *ngFor="let control of phoneNumbers.controls; let i = index">
+      <label for="phone-{{ i }}">Phone {{ i + 1 }}:</label>
+      <!-- Use a helper method to cast control as FormControl -->
+      <input [formControl]="getFormControl(control)" id="phone-{{ i }}">
+    </div>
+  </div>
+  <button type="button" (click)="addPhoneNumber()">Add Phone Number</button>
+</form>

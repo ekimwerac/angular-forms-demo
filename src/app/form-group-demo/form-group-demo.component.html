@@ -1,0 +1,9 @@
+<h2>FormGroup Demo</h2>
+<form [formGroup]="profileForm">
+  <label for="first-name">First Name:</label>
+  <input id="first-name" formControlName="firstName">
+  <label for="last-name">Last Name:</label>
+  <input id="last-name" formControlName="lastName">
+  <p>Current Value: {{ profileForm.value | json }}</p>
+  <button type="button" (click)="logValues()">Log Values</button>
+</form>

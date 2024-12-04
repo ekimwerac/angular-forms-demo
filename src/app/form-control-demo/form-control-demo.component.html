@@ -1,0 +1,5 @@
+<h2>FormControl Demo</h2>
+<label for="name">Name:</label>
+<input id="name" [formControl]="name">
+<p>Current Value: {{ name.value }}</p>
+<button (click)="updateName()">Update Name</button>
