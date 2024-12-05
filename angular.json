@@ -50,6 +50,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/styles/form-styles.css",
               "src/styles.css"
             ],
             "scripts": []

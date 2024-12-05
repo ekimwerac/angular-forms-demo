@@ -1,0 +1,12 @@
+<h2>AsyncPipe Demo</h2>
+<p>This demo shows how to use the AsyncPipe to subscribe to the valueChanges observable directly in the template.</p>
+
+<!-- FormControl input field -->
+<label for="name">Name:</label>
+<input id="name" [formControl]="name">
+
+<!-- Current value displayed using AsyncPipe -->
+<p>Current Value (AsyncPipe): {{ nameValueChanges$ | async }}</p>
+
+<!-- Direct access to FormControl value -->
+<p>Current Value (Direct Access): {{ name.value }}</p>

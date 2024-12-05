@@ -1,0 +1,20 @@
+/* Invalid fields get a red border */
+.ng-invalid {
+    border: 1px solid red;
+  }
+  
+  /* Valid fields get a green border */
+  .ng-valid {
+    border: 1px solid green;
+  }
+  
+  /* Untouched fields have a subtle background */
+  .ng-untouched {
+    background-color: #f9f9f9;
+  }
+  
+  /* Touched fields get a more pronounced background */
+  .ng-touched {
+    background-color: #ffffff;
+  }
+  

@@ -1,0 +1,61 @@
+<h2>Template-Driven Forms Demo</h2>
+<p>This demo showcases how to create forms using Angular's template-driven approach.</p>
+
+<!-- <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)"> -->
+  <!-- Name Field -->
+  <!-- <div>
+    <label for="name">Name:</label>
+    <input id="name" name="name" [(ngModel)]="user.name" required minlength="3">
+    <div *ngIf="userForm.controls['name']?.invalid && userForm.controls['name']?.touched">
+      <small *ngIf="userForm.controls['name']?.errors?.['required']">Name is required.</small>
+      <small *ngIf="userForm.controls['name']?.errors?.['minlength']">Name must be at least 3 characters long.</small>
+    </div>
+  </div> -->
+
+  <!-- Email Field -->
+  <!-- <div>
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="email" [(ngModel)]="user.email" required>
+    <div *ngIf="userForm.controls['email']?.invalid && userForm.controls['email']?.touched">
+      <small *ngIf="userForm.controls['email']?.errors?.['required']">Email is required.</small>
+      <small *ngIf="userForm.controls['email']?.errors?.['email']">Email must be valid.</small>
+    </div>
+  </div> -->
+
+  <!-- Age Field -->
+  <!-- <div>
+    <label for="age">Age:</label>
+    <input id="age" name="age" type="number" [(ngModel)]="user.age" required min="18">
+    <div *ngIf="userForm.controls['age']?.invalid && userForm.controls['age']?.touched">
+      <small *ngIf="userForm.controls['age']?.errors?.['required']">Age is required.</small>
+      <small *ngIf="userForm.controls['age']?.errors?.['min']">You must be at least 18 years old.</small>
+    </div>
+  </div> -->
+
+  <!-- Submit Button -->
+  <!-- <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form> -->
+
+<form #demoForm="ngForm" (ngSubmit)="onSubmit(demoForm)">
+    <!-- Valid Field Example -->
+    <div>
+        <label for="name">Name (Required):</label>
+        <input id="name" name="name" [(ngModel)]="user.name" required>
+        <div *ngIf="demoForm.controls['name']?.invalid && demoForm.controls['name']?.touched">
+            <small *ngIf="demoForm.controls['name']?.errors?.['required']">Name is required.</small>
+        </div>
+    </div>
+
+    <!-- Invalid Field Example -->
+    <div>
+        <label for="email">Email (Required):</label>
+        <input id="email" name="email" type="email" [(ngModel)]="user.email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        <div *ngIf="demoForm.controls['email']?.invalid && demoForm.controls['email']?.touched">
+            <small *ngIf="demoForm.controls['email']?.errors?.['required']">Email is required.</small>
+            <small *ngIf="demoForm.controls['email']?.errors?.['email']">Invalid email format.</small>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="demoForm.invalid">Submit</button>
+</form>
+  
